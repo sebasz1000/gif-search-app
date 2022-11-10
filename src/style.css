@@ -16,6 +16,7 @@
     outline: none;
     padding: 10px 15px;
     width: 100%;
+    margin-bottom: 1.5em;
   }
   
   h2 {
@@ -32,6 +33,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 2em;
   }
   
   .card {
@@ -61,4 +63,15 @@
   .card img {
     width: 100%;
   }
+
+  button{
+    padding: 1em 2em;
+    background-color: rgb(95, 49, 186);
+    border: 1em;
+    color: white;
+  }
   
+
+  .text-muted{
+    color: gray;
+  }

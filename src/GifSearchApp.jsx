@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
-const APIkey = "AhV9WN4q7ny59eg8vw0lQrvFGDbLAkgt";
+import { GifGrid } from "./components/GifGrid";
 
 export const GifSearchApp = () => {
-  const [categories, setCategories] = useState(["OnePunch", "DragonBall"]);
-  console.log(categories);
+  const [categories, setCategories] = useState([]);
+  //console.log(categories);
 
-  const onAddCat = (value) => {
-    setCategories([...categories, value]);
+  const onAddCat = (newCategory) => {
+    //if (categories.includes(newCategory)) return;
+    if (
+      categories.find((cat) => cat.toLowerCase() === newCategory.toLowerCase())
+    )
+      return;
+
+    setCategories([...categories, newCategory]);
   };
   return (
     <>
       <h1>Gif Search App</h1>
-      <ol>
-        {categories.map((category, index) => (
-          <li key={index}>{category}</li>
-        ))}
-      </ol>
-      <AddCategory setCategories={setCategories} />
+      <AddCategory onAddCategory={onAddCat} categories={categories} />
       <button>Add New Category</button>
+      {categories.map((category) => (
+        <GifGrid category={category} key={category} />
+      ))}
     </>
   );
 };
