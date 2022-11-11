@@ -1,28 +1,22 @@
-import { useState, useEffect } from "react";
 import { GridItem } from "./GridItem";
-import { getGifs } from "../helpers/getGifs";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 export const GifGrid = ({ category }) => {
-  //const { images, isLoading } = useFetchGifs(category);
-
-  const [gifs, setGifs] = useState([]);
-  const loadGifs = async () => {
-    const newGifs = await getGifs(category);
-    setGifs(newGifs);
-  };
-  useEffect(() => {
-    loadGifs();
-  }, [category]);
-
+  const { gifs, isLoading } = useFetchGifs(category);
+  console.log(isLoading);
   return (
     <>
       <h2>{category}</h2>
-      {gifs.length > 0 ? (
-        <GridCategory gifs={gifs} />
-      ) : (
+
+      {isLoading && (
+        <img src="../../public/loader.gif" width="150px" alt="Loader image" />
+      )}
+      {gifs.length < 0 && !isLoading ? (
         <p className="text-muted">
           No results were found for <strong>"{category}"</strong>
         </p>
+      ) : (
+        <GridCategory gifs={gifs} />
       )}
     </>
   );
