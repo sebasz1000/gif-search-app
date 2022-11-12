@@ -16,12 +16,15 @@ export const GifSearchApp = () => {
   };
   return (
     <>
-      <h1>Gif Search App</h1>
-      <AddCategory onAddCategory={onAddCat} categories={categories} />
-      <button>Add New Category</button>
-      {categories.map((category) => (
-        <GifGrid category={category} key={category} />
-      ))}
+      <div className="container">
+        <header className="mx-auto">
+          <h1 className="text-center text-white">Gif Search App</h1>
+          <AddCategory onAddCategory={onAddCat} categories={categories} />
+        </header>
+        {categories.map((category) => (
+          <GifGrid category={category} key={category} />
+        ))}
+      </div>
     </>
   );
 };

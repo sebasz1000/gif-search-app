@@ -9,7 +9,7 @@ export const useFetchGifs = (category) => {
     setTimeout(() => {
       setGifs(newGifs);
       setIsLoading(false);
-    }, 2000);
+    }, 600);
   };
   useEffect(() => {
     loadGifs();
