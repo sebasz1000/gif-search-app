@@ -1,6 +1,6 @@
 import { GridItem } from "./GridItem";
 import { useFetchGifs } from "../hooks/useFetchGifs";
-import loaderUrl from "../assets/loader.gif";
+import loaderUrl from "./../assets/loader.gif";
 export const GifGrid = ({ category }) => {
   const { gifs, isLoading } = useFetchGifs(category);
 
