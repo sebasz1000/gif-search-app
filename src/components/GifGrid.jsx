@@ -20,7 +20,7 @@ export const GifGrid = ({ category }) => {
           /> PUT ME BACK AFTER TESTING*/
           <h4 className="text-white text-center">Loading...</h4>
         )}
-        {gifs.length < 0 && !isLoading ? (
+        {gifs && gifs.length < 0 && !isLoading ? (
           <p className="text-muted">
             No results were found for <strong>"{category}"</strong>
           </p>
