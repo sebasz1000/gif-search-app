@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 export const GridItem = ({ id, title, url }) => {
   return (
     <div key={id} className="card">
@@ -5,4 +6,9 @@ export const GridItem = ({ id, title, url }) => {
       <img src={url} alt={title} />
     </div>
   );
+};
+
+GridItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
 };

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests <GridItem /> Should match with snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <h4
+      class="text-white font-weight-light"
+    >
+      Ash
+    </h4>
+    <img
+      alt="Ash"
+      src="https://media1.giphy.com/media/G9qfCvxlwGAaQ/giphy.gif?cid=cc5384774mwbhb1qqlv1fa6vi6l0dr6dszwjdwci3ceta1va&rid=giphy.gif&ct=g"
+    />
+  </div>
+</div>
+`;
